@@ -91,8 +91,9 @@ export const Dashboard: React.FC = () => {
               <option>Mês Passado</option>
             </select>
           </div>
-          <div className="h-64 w-full">
-            <ResponsiveContainer width="100%" height="100%">
+          {/* Container com altura mínima explícita para evitar erro de resolução do Recharts */}
+          <div className="h-64 w-full" style={{ minHeight: '256px' }}>
+            <ResponsiveContainer width="100%" height="100%" minWidth={0}>
               <BarChart data={MOCK_CHART_DATA}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
                 <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{fontSize: 12, fill: '#9ca3af'}} dy={10} />

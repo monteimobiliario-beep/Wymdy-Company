@@ -15,6 +15,24 @@ export interface User {
   email: string;
   role: UserRole;
   status: 'active' | 'inactive';
+  accessKey?: string; // Chave de acesso única do colaborador
+}
+
+export interface Employee {
+  id: string;
+  userId?: string;
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  position: string;
+  department: string;
+  bankName: string;
+  accountNumber: string;
+  nib: string;
+  salary: number;
+  status: 'active' | 'inactive';
+  admissionDate: string;
 }
 
 export interface Product {
@@ -99,8 +117,14 @@ export interface SalaryEntry {
   employeeId: string;
   employeeName: string;
   baseSalary: number;
-  marketingBonus: number;
-  otherBonuses: number;
+  foodAllowance: number;
+  transportAllowance: number;
+  bonus: number;
+  personalCommission: number;
+  teamCommission: number;
+  otherIncome: number;
+  totalAllowances: number;
+  totalIncome: number;
   deductions: number;
   netSalary: number;
 }
